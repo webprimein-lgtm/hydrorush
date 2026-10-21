@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroRush Detailing | Mobile Car Detailing Melbourne</title>
+    <meta name="description" content="Premium mobile car detailing delivered to your doorstep in Melbourne, Australia. Bring back the shine with HydroRush Detailing.">
+    <meta property="og:title" content="HydroRush Detailing | Mobile Car Detailing Melbourne">
+    <meta property="og:description" content="Premium mobile car detailing delivered to your doorstep in Melbourne, Australia. Redefine your ride.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #07090C;
+            --bg-secondary: #10151B;
+            --cyan: #00D9FF;
+            --text-light: #FFFFFF;
+            --text-muted: #B8C0C8;
+            --border: #252D35;
+            --font-head: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* PRELOADER */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-primary);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .preloader-content {
+            text-align: center;
+            animation: float 2s infinite ease-in-out;
+            padding: 20px;
+        }
+
+        .preloader-logo {
+            height: 100px;
+            width: auto;
+            max-width: 90vw;
+            margin-bottom: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: contain;
+        }
+
+        .preloader-text {
+            color: var(--cyan);
+            font-family: var(--font-head);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); opacity: 0.8; }
+            50% { transform: translateY(-10px); opacity: 1; }
+            100% { transform: translateY(0px); opacity: 0.8; }
+        }
+
+        body.loaded #preloader {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* UTILITIES */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        .text-center { text-align: center; }
+        .text-cyan { color: var(--cyan); }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (min-width: 768px) {
+            .section-title { font-size: 2.5rem; }
+            .section-padding { padding: 5rem 0; }
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0.8rem 1.5rem;
+            font-family: var(--font-head);
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        /* FIXED BTN-PRIMARY CONTRAST */
+        .btn-primary, a.btn-primary, button.btn-primary {
+            background-color: var(--cyan) !important;
+            color: #07090C !important;
+            font-weight: 800 !important;
+            border: 1px solid var(--cyan) !important;
+        }
+        .btn-primary:hover, a.btn-primary:hover {
+            background-color: #00bce6 !important;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 1px solid var(--border);
+        }
+        .btn-outline:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #ffffff !important;
+            border: 1px solid #25D366;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebe57;
+            border-color: #1ebe57;
+            transform: translateY(-2px);
+            color: #ffffff !important;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: rgba(7, 9, 12, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            flex-shrink: 0;
+        }
+        
+        .logo img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover {
+            color: var(--cyan);
+        }
+
+        .nav-actions {
+            display: none;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .nav-actions .btn {
+            padding: 0.6rem 1.2rem;
+        }
+
+        .hamburger {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            transform: translateY(-150%);
+            transition: transform 0.4s ease;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+        .mobile-menu a {
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-links { display: flex; }
+            .nav-actions { display: flex; }
+            .hamburger { display: none; }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background-image: url('https://images.unsplash.com/photo-1605515298946-d062f2e9da53?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            margin-top: 80px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(7, 9, 12, 0.95) 0%, rgba(7, 9, 12, 0.7) 50%, rgba(7, 9, 12, 0.3) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-light);
+            max-width: 700px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+            align-items: center;
+        }
+        
+        .hero-buttons .btn {
+            font-size: 0.9rem;
+            padding: 1rem 1.8rem;
+        }
+        
+        .hero-buttons .btn-outline {
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        .hero-buttons .btn-outline:hover {
+            border-color: var(--cyan);
+            background-color: rgba(0, 217, 255, 0.05);
+        }
+
+        .hero-benefits {
+            display: flex;
+            gap: 2rem;
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .hero-benefits span {
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-benefits span::before {
+            content: '•';
+            color: var(--cyan);
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* GRID LAYOUTS */
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .grid-3 { grid-template-columns: 1fr; }
+        .grid-4 { grid-template-columns: 1fr; }
+        
+        @media (min-width: 768px) {
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        /* CARDS GENERAL */
+        .card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-5px);
+        }
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title {
+            font-size: 1.25rem;
+        }
+        .card-desc {
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* PRICING */
+        .pricing-grid-container {
+            padding-top: 1.5rem; 
+        }
+        
+        .pricing-card {
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            height: 100%;
+            overflow: visible !important; 
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -15px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--cyan);
+            color: #000000;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            white-space: nowrap; 
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 217, 255, 0.25); 
+        }
+        
+        .pricing-price {
+            font-family: var(--font-head);
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin: 1.5rem 0;
+            line-height: 1;
+        }
+        .pricing-note {
+            font-size: 0.75rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        /* FEATURES */
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--cyan);
+            margin-bottom: 1rem;
+        }
+
+        /* GALLERY */
+        .gallery-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .filter-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--cyan);
+            color: var(--bg-primary);
+            border-color: var(--cyan);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(7, 9, 12, 0.95);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--text-light);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* VIDEO */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background-color: #000;
+        }
+        .video-wrapper video {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* INSTAGRAM */
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        @media(min-width: 768px) {
+            .insta-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .insta-item {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            display: block;
+            border: 1px solid var(--border);
+        }
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .insta-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* BOOKING FORM */
+        .booking-section {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media(min-width: 768px) {
+            .form-grid { grid-template-columns: 1fr 1fr; }
+            .form-full { grid-column: span 2; }
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: var(--font-body);
+            transition: border-color 0.3s ease;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--cyan);
+        }
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B8C0C8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+        .form-error {
+            color: #ff4d4f;
+            font-size: 0.75rem;
+            display: none;
+        }
+
+        /* MAP & ABOUT */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        @media(min-width: 768px) {
+            .about-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .about-img {
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        /* FAQ ACCORDION */
+        .faq-item {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.2rem;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--cyan);
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            padding: 0 1.2rem;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+        .faq-answer.active {
+            max-height: 200px;
+            padding: 0 1.2rem 1.2rem 1.2rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 4rem 0 2rem 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem; 
+            margin-bottom: 3rem;
+        }
+        @media(min-width: 768px) {
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+        }
+        
+        .footer-col h4 {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .footer-col p, .footer-col a {
+            color: var(--text-muted);
+            margin-bottom: 0.8rem; 
+            display: block;
+        }
+        .footer-col a:hover {
+            color: var(--cyan);
+        }
+        
+        .footer-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* FLOATING WHATSAPP ICON */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px; 
+            left: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px; 
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .floating-wa svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        .floating-wa:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--bg-secondary);
+            color: var(--cyan);
+            border: 1px solid var(--border);
+            width: 45px;
+            height: 45px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            background-color: var(--cyan);
+            color: var(--bg-primary);
+        }
+
+        /* === MOBILE RESPONSIVENESS FIXES (Centralized Alignment) === */
+        @media (max-width: 768px) {
+            /* Hero Alignment */
+            .hero { 
+                height: auto; 
+                padding: 6rem 0 4rem 0; 
+            }
+            .hero-content {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-title { 
+                font-size: 2.5rem; 
+            }
+            .hero-desc { 
+                font-size: 1.05rem; 
+            }
+            .hero-buttons { 
+                flex-direction: column; 
+                width: 100%; 
+                gap: 1rem; 
+            }
+            .hero-buttons .btn { 
+                width: 100%; 
+                max-width: 400px; 
+            }
+            .hero-benefits { 
+                flex-direction: column; 
+                gap: 0.8rem; 
+                align-items: center; 
+                width: 100%; 
+            }
+
+            /* About Section Alignment (Fixed for Mobile) */
+            .about-grid > div:first-child {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            /* Footer Alignment */
+            .footer-grid {
+                gap: 2.5rem;
+            }
+            .footer-col {
+                align-items: center; 
+                text-align: center; 
+            }
+            .footer-col h4, .footer-col p, .footer-col a {
+                text-align: center;
+                width: 100%;
+            }
+            .footer-buttons {
+                justify-content: center;
+                width: 100%;
+                gap: 1rem;
+            }
+        }
+
+        /* ANIMATIONS */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <img src="logo.png" alt="HydroRush Detailing Logo" class="preloader-logo">
+            <div class="preloader-text">Welcome to HydroRush</div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="HydroRush Detailing Logo">
+            </a>
+            
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#packages">Packages</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="javascript:void(0)" onclick="chatWhatsApp('Hi HydroRush Detailing, I have a quick question.')" class="text-cyan" aria-label="WhatsApp">
+                    <!-- Nav Header Chat Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007"/>
+                    </svg>
+                </a>
+                <a href="#book" class="btn btn-primary">Book Now</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#book" class="btn btn-primary" style="text-align: center; width: 100%;">Book Now</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content fade-up">
+                <span class="hero-label">Mobile Detailing | Melbourne, Australia</span>
+                <h1 class="hero-title">REDEFINE <span class="text-cyan">YOUR RIDE.</span></h1>
+                <p class="hero-desc">Premium mobile car detailing, delivered to your doorstep. Bring back the shine with HydroRush Detailing.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#book" class="btn btn-primary">Book Your Detail</a>
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                    <a href="javascript:void(0)" onclick="chatWhatsApp('Hi HydroRush Detailing, I would like to know more about your services.')" class="btn btn-whatsapp">
+                        <!-- Hero WhatsApp SVG Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                        </svg>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+
+                <div class="hero-benefits">
+                    <span>Mobile Convenience</span>
+                    <span>Premium Finish</span>
+                    <span>Easy Booking</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="section-padding">
+            <div class="container fade-up">
+                <h2 class="section-title text-center">Our Detailing Services</h2>
+                <div class="grid grid-3">
+                    <!-- Service 1 -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=600&q=80" alt="Basic Wash" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title">Basic Wash</h3>
+                            <p class="card-desc">A thorough exterior wash to remove dirt and grime, leaving your car looking fresh and clean.</p>
+                            <button class="btn btn-outline" onclick="selectService('Basic Wash')">Enquire Now</button>
+                        </div>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=600&q=80" alt="Premium Detail" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title">Premium Detail</h3>
+                            <p class="card-desc">Comprehensive interior and exterior cleaning designed to elevate your vehicle's overall appearance.</p>
+                            <button class="btn btn-outline" onclick="selectService('Premium Detail')">Enquire Now</button>
+                        </div>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&w=600&q=80" alt="Full Detail" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title">Full Detail</h3>
+                            <p class="card-desc">Our most intensive detailing service, restoring your car to a near-showroom condition inside and out.</p>
+                            <button class="btn btn-outline" onclick="selectService('Full Detail')">Enquire Now</button>
+                        </div>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Interior Detailing" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title">Interior Detailing</h3>
+                            <p class="card-desc">Deep cleaning of seats, carpets, and surfaces to eliminate odors and stains for a spotless cabin.</p>
+                            <button class="btn btn-outline" onclick="selectService('Interior Detailing')">Enquire Now</button>
+                        </div>
+                    </div>
+                    <!-- Service 5 -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1605515298946-d062f2e9da53?auto=format&fit=crop&w=600&q=80" alt="Exterior Detailing" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title">Exterior Detailing</h3>
+                            <p class="card-desc">Detailed exterior hand wash, decontamination, and finishing to enhance your vehicle's gloss.</p>
+                            <button class="btn btn-outline" onclick="selectService('Exterior Detailing')">Enquire Now</button>
+                        </div>
+                    </div>
+                    <!-- Service 6 -->
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1552930294-6b595f4c2974?auto=format&fit=crop&w=600&q=80" alt="Paint Protection" class="card-img" loading="lazy">
+                        <div class="card-content">
+                            <h3 class="card-title">Paint Protection</h3>
+                            <p class="card-desc">High-quality protective coatings applied to your paintwork to defend against elements and add shine.</p>
+                            <button class="btn btn-outline" onclick="selectService('Paint Protection')">Enquire Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section id="packages" class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container fade-up">
+                <h2 class="section-title text-center">Our Detailing Packages</h2>
+                <div class="grid grid-3 pricing-grid-container">
+                    <!-- Package 1 -->
+                    <div class="card pricing-card">
+                        <div>
+                            <h3 class="card-title">Basic Wash</h3>
+                            <div class="pricing-price">A$80</div>
+                            <p>Essential exterior wash and dry.</p>
+                            <p class="pricing-note">Contact us to confirm package inclusions.</p>
+                        </div>
+                        <button class="btn btn-outline" onclick="selectPackage('Basic Wash')">Book This Package</button>
+                    </div>
+                    <!-- Package 2 -->
+                    <div class="card pricing-card" style="border-color: var(--cyan);">
+                        <span class="pricing-badge">Popular Choice</span>
+                        <div>
+                            <h3 class="card-title">Premium Detail</h3>
+                            <div class="pricing-price text-cyan">A$150</div>
+                            <p>Thorough interior and exterior clean.</p>
+                            <p class="pricing-note">Contact us to confirm package inclusions.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="selectPackage('Premium Detail')">Book This Package</button>
+                    </div>
+                    <!-- Package 3 -->
+                    <div class="card pricing-card">
+                        <div>
+                            <h3 class="card-title">Full Detail</h3>
+                            <div class="pricing-price">A$200</div>
+                            <p>Comprehensive restoration and finishing.</p>
+                            <p class="pricing-note">Contact us to confirm package inclusions.</p>
+                        </div>
+                        <button class="btn btn-outline" onclick="selectPackage('Full Detail')">Book This Package</button>
+                    </div>
+                </div>
+                <p class="text-center" style="margin-top: 2rem; font-size: 0.875rem;">Final pricing may vary depending on vehicle size, condition, and the selected service.</p>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section id="features" class="section-padding">
+            <div class="container fade-up text-center">
+                <h2 class="section-title">Why Choose HydroRush?</h2>
+                <div class="grid grid-4">
+                    <div class="card" style="padding: 2rem;">
+                        <div class="feature-icon">🚐</div>
+                        <h4 style="margin-bottom: 0.5rem;">Mobile Convenience</h4>
+                        <p style="font-size: 0.875rem; margin:0;">We bring our premium detailing setup directly to your home or workplace.</p>
+                    </div>
+                    <div class="card" style="padding: 2rem;">
+                        <div class="feature-icon">✨</div>
+                        <h4 style="margin-bottom: 0.5rem;">Attention to Detail</h4>
+                        <p style="font-size: 0.875rem; margin:0;">Meticulous cleaning processes that ensure every inch is spotless.</p>
+                    </div>
+                    <div class="card" style="padding: 2rem;">
+                        <div class="feature-icon">📱</div>
+                        <h4 style="margin-bottom: 0.5rem;">Easy Booking</h4>
+                        <p style="font-size: 0.875rem; margin:0;">Streamlined online booking and quick WhatsApp communication.</p>
+                    </div>
+                    <div class="card" style="padding: 2rem;">
+                        <div class="feature-icon">🤝</div>
+                        <h4 style="margin-bottom: 0.5rem;">Customer-Focused</h4>
+                        <p style="font-size: 0.875rem; margin:0;">Dedicated to providing reliable, trustworthy, and friendly service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container fade-up">
+                <h2 class="section-title text-center">The HydroRush Finish</h2>
+                
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">ALL</button>
+                    <button class="filter-btn" data-filter="exterior">EXTERIOR</button>
+                    <button class="filter-btn" data-filter="interior">INTERIOR</button>
+                    <button class="filter-btn" data-filter="wash">WASH</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="exterior">
+                        <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=600&q=80" alt="Exterior Detailing" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="interior">
+                        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=600&q=80" alt="Interior Cleaning" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="wash">
+                        <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=600&q=80" alt="Foam Washing" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="exterior">
+                        <img src="https://images.unsplash.com/photo-1552930294-6b595f4c2974?auto=format&fit=crop&w=600&q=80" alt="Paint Finishing" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="wash">
+                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=600&q=80" alt="Wheel Cleaning" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="exterior">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="Luxury Car Detailing" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO SECTION -->
+        <section id="video" class="section-padding">
+            <div class="container fade-up text-center">
+                <h2 class="section-title">See The Shine In Action</h2>
+                <div class="video-wrapper">
+                    <video controls poster="https://images.unsplash.com/photo-1605515298946-d062f2e9da53?auto=format&fit=crop&w=1200&q=80">
+                        <source src="#" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p style="margin-top: 1rem;">HydroRush detailing videos coming soon.</p>
+            </div>
+        </section>
+
+        <!-- INSTAGRAM SECTION -->
+        <section id="instagram" class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container fade-up text-center">
+                <h2 class="section-title">Follow The HydroRush Journey</h2>
+                <p>More detailing. More shine.</p>
+                <a href="https://www.instagram.com/hydrorushdetailing/" target="_blank" class="text-cyan" style="display:inline-block; margin-bottom: 2rem; font-weight:600;">@hydrorushdetailing</a>
+                
+                <div class="insta-grid">
+                    <a href="https://www.instagram.com/hydrorushdetailing/" target="_blank" class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=400&q=80" alt="Instagram Post Placeholder" loading="lazy">
+                    </a>
+                    <a href="https://www.instagram.com/hydrorushdetailing/" target="_blank" class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80" alt="Instagram Post Placeholder" loading="lazy">
+                    </a>
+                    <a href="https://www.instagram.com/hydrorushdetailing/" target="_blank" class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=400&q=80" alt="Instagram Post Placeholder" loading="lazy">
+                    </a>
+                    <a href="https://www.instagram.com/hydrorushdetailing/" target="_blank" class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1552930294-6b595f4c2974?auto=format&fit=crop&w=400&q=80" alt="Instagram Post Placeholder" loading="lazy">
+                    </a>
+                </div>
+                <a href="https://www.instagram.com/hydrorushdetailing/" target="_blank" class="btn btn-outline">Follow on Instagram</a>
+            </div>
+        </section>
+
+        <!-- BOOKING FORM SECTION -->
+        <section id="book" class="section-padding booking-section">
+            <div class="container fade-up">
+                <h2 class="section-title text-center">Book Your Detail</h2>
+                
+                <div class="form-container">
+                    <form id="bookingForm" novalidate>
+                        <div class="form-grid">
+                            
+                            <!-- Personal Info -->
+                            <div class="form-group">
+                                <label class="form-label" for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" class="form-control" required>
+                                <span class="form-error" id="err-fullName">Please enter your name.</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="e.g. 0400 000 000" required>
+                                <span class="form-error" id="err-phone">Please enter a valid Australian phone number.</span>
+                            </div>
+                            <div class="form-group form-full">
+                                <label class="form-label" for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" required>
+                                <span class="form-error" id="err-email">Please enter a valid email address.</span>
+                            </div>
+
+                            <!-- Vehicle Info -->
+                            <div class="form-group">
+                                <label class="form-label" for="vehicleMake">Vehicle Make *</label>
+                                <input type="text" id="vehicleMake" class="form-control" placeholder="e.g. Toyota, BMW" required>
+                                <span class="form-error" id="err-vehicleMake">Required.</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="vehicleModel">Vehicle Model *</label>
+                                <input type="text" id="vehicleModel" class="form-control" required>
+                                <span class="form-error" id="err-vehicleModel">Required.</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="vehicleSize">Vehicle Size *</label>
+                                <select id="vehicleSize" class="form-control" required>
+                                    <option value="" disabled selected>Select size</option>
+                                    <option value="Small">Small</option>
+                                    <option value="Sedan">Sedan</option>
+                                    <option value="SUV">SUV</option>
+                                    <option value="4WD">4WD</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span class="form-error" id="err-vehicleSize">Required.</span>
+                            </div>
+                            
+                            <!-- Service Selection -->
+                            <div class="form-group">
+                                <label class="form-label" for="serviceSelect">Service / Package Required *</label>
+                                <select id="serviceSelect" class="form-control" required>
+                                    <option value="" disabled selected>Select service</option>
+                                    <optgroup label="Packages">
+                                        <option value="Basic Wash">Basic Wash</option>
+                                        <option value="Premium Detail">Premium Detail</option>
+                                        <option value="Full Detail">Full Detail</option>
+                                    </optgroup>
+                                    <optgroup label="Individual Services">
+                                        <option value="Interior Detailing">Interior Detailing</option>
+                                        <option value="Exterior Detailing">Exterior Detailing</option>
+                                        <option value="Paint Protection">Paint Protection</option>
+                                    </optgroup>
+                                </select>
+                                <span class="form-error" id="err-serviceSelect">Required.</span>
+                            </div>
+
+                            <!-- Logistics -->
+                            <div class="form-group">
+                                <label class="form-label" for="bookingDate">Preferred Date *</label>
+                                <input type="date" id="bookingDate" class="form-control" required>
+                                <span class="form-error" id="err-bookingDate">Please select a valid future date.</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="bookingTime">Preferred Time *</label>
+                                <select id="bookingTime" class="form-control" required>
+                                    <option value="" disabled selected>Select time</option>
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                    <option value="Flexible">Flexible</option>
+                                </select>
+                                <span class="form-error" id="err-bookingTime">Required.</span>
+                            </div>
+                            <div class="form-group form-full">
+                                <label class="form-label" for="suburb">Melbourne Suburb *</label>
+                                <input type="text" id="suburb" class="form-control" placeholder="e.g. Richmond, South Yarra" required>
+                                <span class="form-error" id="err-suburb">Required.</span>
+                            </div>
+                            <div class="form-group form-full">
+                                <label class="form-label" for="additionalInfo">Additional Information</label>
+                                <textarea id="additionalInfo" class="form-control" rows="4" placeholder="Any specific issues, stains, or requests?"></textarea>
+                            </div>
+
+                            <div class="form-group form-full" style="margin-top: 1rem;">
+                                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem; padding: 1rem;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007"/>
+                                    </svg>
+                                    Submit via WhatsApp
+                                </button>
+                                <p style="font-size: 0.75rem; text-align: center; margin-top: 1rem;">You will be redirected to WhatsApp to send this message. Your appointment is not confirmed until we reply.</p>
+                            </div>
+                            
+                            <div class="form-group form-full text-center">
+                                <a href="mailto:?subject=Booking Enquiry - HydroRush Detailing" class="text-muted" style="font-size: 0.875rem; text-decoration: underline;">Or send an email enquiry</a>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAP SECTION -->
+        <section id="map" class="section-padding">
+            <div class="container fade-up text-center">
+                <h2 class="section-title">Our Service Area</h2>
+                <p style="max-width: 600px; margin: 0 auto 2rem auto;">HydroRush Detailing provides mobile detailing services in Melbourne, Victoria, Australia.</p>
+                <div class="map-container">
+                    <iframe src="https://maps.google.com/maps?q=Melbourne%2C%20Victoria%2C%20Australia&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <a href="https://maps.google.com/maps?q=Melbourne%2C%20Victoria%2C%20Australia" target="_blank" class="btn btn-outline">Open in Google Maps</a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container fade-up">
+                <div class="about-grid">
+                    <div>
+                        <h2 class="section-title" style="margin-bottom: 1.5rem;">More Than A Wash.</h2>
+                        <p>HydroRush Detailing brings convenient mobile car detailing to Melbourne, Australia.</p>
+                        <p>Our focus is on making vehicle care convenient and providing detailing services that help customers maintain the appearance of their vehicles.</p>
+                        <p>From a regular wash to a comprehensive detail, we're here to help make your detailing experience straightforward.</p>
+                        <div style="margin-top: 2rem;">
+                            <a href="#book" class="btn btn-primary">Book Your Detail</a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=800&q=80" alt="HydroRush Detailing Melbourne" class="about-img" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq" class="section-padding">
+            <div class="container fade-up" style="max-width: 800px;">
+                <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">Where do you operate?</button>
+                    <div class="faq-answer">
+                        <p style="margin-top: 1rem;">We provide mobile detailing services across Melbourne, Victoria, Australia. We come directly to your home or workplace.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How can I book?</button>
+                    <div class="faq-answer">
+                        <p style="margin-top: 1rem;">You can book by filling out the booking form on this website, which will send your details to us via WhatsApp, or you can contact us directly at 0421 616 400.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How much does detailing cost?</button>
+                    <div class="faq-answer">
+                        <p style="margin-top: 1rem;">Our basic wash starts at A$80, with a premium detail at A$150 and a full detail at A$200. Final pricing may vary depending on vehicle size, condition, and the selected service.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer mobile detailing?</button>
+                    <div class="faq-answer">
+                        <p style="margin-top: 1rem;">Yes! Mobile convenience is our priority. We bring all necessary equipment to your location to detail your vehicle on-site.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How long does detailing take?</button>
+                    <div class="faq-answer">
+                        <p style="margin-top: 1rem;">The duration depends on the package and the condition of the vehicle. A basic wash might take an hour, while a full detail can take several hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I request a custom service?</button>
+                    <div class="faq-answer">
+                        <p style="margin-top: 1rem;">Absolutely. Please mention your specific requirements in the 'Additional Information' section of the booking form or chat with us on WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+        <div class="container fade-up">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>HYDRORUSH DETAILING</h4>
+                    <p>Melbourne, Victoria, Australia</p>
+                    <a href="tel:+61421616400" style="margin-top: 1rem;">Phone: 0421 616 400</a>
+                    <a href="https://www.instagram.com/hydrorushdetailing/" target="_blank">Instagram: @hydrorushdetailing</a>
+                    <div class="footer-buttons">
+                        <a href="tel:+61421616400" class="btn btn-outline" style="padding: 0.5rem 1rem;">Call Now</a>
+                        <a href="javascript:void(0)" onclick="chatWhatsApp('Hi HydroRush Detailing, I have an enquiry.')" class="btn btn-whatsapp" style="padding: 0.5rem 1rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#packages">Packages</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#about">About</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h4>READY FOR A SHINE?</h4>
+                    <p style="margin-bottom: 1.5rem;">Experience premium mobile car detailing at your doorstep.</p>
+                    <a href="#book" class="btn btn-primary">Book Your Detail</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> HydroRush Detailing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <img src="" alt="Enlarged gallery image" class="lightbox-img" id="lightboxImg">
+    </div>
+
+    <!-- FLOATING WHATSAPP ICON -->
+    <a href="javascript:void(0)" onclick="chatWhatsApp('Hi HydroRush Detailing, I have an enquiry.')" class="floating-wa" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007"/>
+        </svg>
+    </a>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Preloader Logic
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document.body.classList.add('loaded');
+                    document.body.classList.remove('no-scroll');
+                }, 1800); 
+            });
+
+            // Configuration
+            const WHATSAPP_NUMBER = "61421616400";
+
+            // Global WhatsApp Function
+            window.chatWhatsApp = function(message) {
+                window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+            }
+
+            // Set Current Year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+
+            hamburger.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                hamburger.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                    hamburger.textContent = '☰';
+                });
+            });
+
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 80; 
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Navbar Scroll Effect & Back To Top
+            const navbar = document.querySelector('.navbar');
+            const backToTop = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.5)';
+                } else {
+                    navbar.style.boxShadow = 'none';
+                }
+
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Scroll Animations (Intersection Observer)
+            const fadeUpElements = document.querySelectorAll('.fade-up');
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeUpElements.forEach(el => scrollObserver.observe(el));
+
+            // Gallery Filters
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 50);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+
+            // Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.querySelector('img').src;
+                    lightboxImg.src = imgSrc;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            const closeLightbox = () => lightbox.classList.remove('active');
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeLightbox();
+            });
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all
+                    document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+
+                    // If it wasn't active, open it
+                    if (!isActive) {
+                        question.classList.add('active');
+                        question.nextElementSibling.classList.add('active');
+                    }
+                });
+            });
+
+            // Booking Selection Logic
+            const serviceSelect = document.getElementById('serviceSelect');
+            
+            window.selectService = function(serviceName) {
+                if(serviceSelect) {
+                    serviceSelect.value = serviceName;
+                    document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            window.selectPackage = function(packageName) {
+                if(serviceSelect) {
+                    serviceSelect.value = packageName;
+                    document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            // Booking Form Date Logic (Prevent Past Dates)
+            const dateInput = document.getElementById('bookingDate');
+            if(dateInput) {
+                const today = new Date();
+                const tzOffset = today.getTimezoneOffset() * 60000;
+                const localISOTime = (new Date(today - tzOffset)).toISOString().split('T')[0];
+                dateInput.setAttribute('min', localISOTime);
+            }
+
+            // Form Validation & Submission
+            const bookingForm = document.getElementById('bookingForm');
+            
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                let isValid = true;
+                
+                const validateField = (id, condition) => {
+                    const el = document.getElementById(id);
+                    const errEl = document.getElementById(`err-${id}`);
+                    if (!condition) {
+                        el.style.borderColor = '#ff4d4f';
+                        errEl.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        el.style.borderColor = 'var(--border)';
+                        errEl.style.display = 'none';
+                    }
+                    return el.value.trim();
+                };
+
+                const fullName = validateField('fullName', document.getElementById('fullName').value.trim() !== '');
+                
+                const phoneVal = document.getElementById('phone').value.replace(/\s+/g, '');
+                const phoneCondition = phoneVal.length >= 8 && /^[0-9+\(\)\-\s]+$/.test(phoneVal);
+                const phone = validateField('phone', phoneCondition);
+                
+                const emailVal = document.getElementById('email').value.trim();
+                const emailCondition = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+                const email = validateField('email', emailCondition);
+                
+                const vehicleMake = validateField('vehicleMake', document.getElementById('vehicleMake').value.trim() !== '');
+                const vehicleModel = validateField('vehicleModel', document.getElementById('vehicleModel').value.trim() !== '');
+                const vehicleSize = validateField('vehicleSize', document.getElementById('vehicleSize').value !== '');
+                const service = validateField('serviceSelect', document.getElementById('serviceSelect').value !== '');
+                const bookingDate = validateField('bookingDate', document.getElementById('bookingDate').value !== '');
+                const bookingTime = validateField('bookingTime', document.getElementById('bookingTime').value !== '');
+                const suburb = validateField('suburb', document.getElementById('suburb').value.trim() !== '');
+                const additionalInfo = document.getElementById('additionalInfo').value.trim();
+
+                if (isValid) {
+                    const message = `*NEW BOOKING ENQUIRY* 🚗✨\n\n` +
+                                    `*Customer Details*\n` +
+                                    `Name: ${fullName}\n` +
+                                    `Phone: ${phone}\n` +
+                                    `Email: ${email}\n\n` +
+                                    `*Vehicle Information*\n` +
+                                    `Make: ${vehicleMake}\n` +
+                                    `Model: ${vehicleModel}\n` +
+                                    `Size: ${vehicleSize}\n\n` +
+                                    `*Service Required*\n` +
+                                    `${service}\n\n` +
+                                    `*Logistics*\n` +
+                                    `Date: ${bookingDate}\n` +
+                                    `Time: ${bookingTime}\n` +
+                                    `Suburb: ${suburb}\n` +
+                                    (additionalInfo ? `\n*Additional Info:*\n${additionalInfo}` : '');
+
+                    chatWhatsApp(message);
+                }
+            });
+
+            // Clear errors on input
+            const inputs = bookingForm.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    input.style.borderColor = 'var(--border)';
+                    const errEl = document.getElementById(`err-${input.id}`);
+                    if(errEl) errEl.style.display = 'none';
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
